@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -6,16 +5,16 @@ import Navbar from "../../components/navbar";
 import Project from "../../components/portfolio/project";
 import Layout from "../../components/layout";
 
-function Index({ projects }) {
+function Index() {
   const [status, setstatus] = useState("all");
 
   //console.log(projects);
-  //const [projects, setprojects] = useState([]);
+  const [projects, setprojects] = useState([]);
 
-  /* useEffect(
+  useEffect(
     function () {
       axios
-        .get(`${process.env.NEXT_PUBLIC_apiUrl}projects/${status}`)
+        .get(`http://127.0.0.1:8000/api/projects/${status}`)
         .then(function (response) {
           setprojects(response.data.projects);
         })
@@ -25,10 +24,13 @@ function Index({ projects }) {
         });
     },
     [status]
-  );*/
+  );
 
   return (
-    <Layout>
+    <Layout
+      title="portfolio - home of decoration and home designs"
+      description="Mpdesigns - home of decoration and home designs"
+    >
       <Navbar />
       <div className="mt-6 md:w-10/12 mx-2 md:mx-auto  flex justify-between items-center">
         <select
@@ -55,7 +57,7 @@ function Index({ projects }) {
   );
 }
 
-export async function getServerSideProps() {
+/*export async function getServerSideProps() {
   // Fetch data from external API
   const data = await axios.get(`http://127.0.0.1:8000/api/projects/all`);
   const projects = data.data.projects;
@@ -63,5 +65,6 @@ export async function getServerSideProps() {
   // Pass data to the page via props
   return { props: { projects } };
 }
+*/
 
 export default Index;

@@ -3,10 +3,11 @@ import axios from "axios";
 import Navbar from "../components/dashboard/navbar";
 import Layout from "../components/layout";
 
-import { useRouter } from "next/router";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const router = useRouter();
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -16,14 +17,14 @@ function Login() {
     e.preventDefault();
     setIsLoading(true);
     axios
-      .post(`${process.env.NEXT_PUBLIC_apiUrl}login`, {
+      .post(`http://127.0.0.1:8000/api/login`, {
         email,
         password,
       })
       .then((response) => {
         sessionStorage.setItem("token", response.data.token);
         sessionStorage.setItem("user", response.data.user);
-        router.push("/dashboard");
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.log(error.response.data.message);
@@ -35,7 +36,10 @@ function Login() {
   };
 
   return (
-    <Layout>
+    <Layout
+      title="Login - home of decoration and home designs"
+      description="Login - home of decoration and home designs"
+    >
       <Navbar />
       <div className="w-11/12 md:w-4/12 mx-auto border-[.01rem] border-gray-200 p-2 mt-6 mb-4">
         <h1 className="text-lg text-center font-bold text-blue-300 mt-2 mb-4">
