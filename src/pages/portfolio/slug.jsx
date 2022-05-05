@@ -23,7 +23,6 @@ function Project() {
           setproject(response.data.project);
         })
         .catch(function (error) {
-          alert(error.response.data.message);
           console.log(error);
         });
     },

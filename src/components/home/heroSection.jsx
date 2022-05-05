@@ -63,14 +63,12 @@ function HeroSection() {
                 src={apart2}
                 alt="Mpdesigns images 1"
                 width={100}
-                height={100}
                 className="h-20 w-full rounded"
               />
               <img
                 src={apart3}
                 alt="Mpdesigns images 1"
                 width={100}
-                height={100}
                 className="h-20 w-full rounded"
               />
             </div>

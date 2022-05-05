@@ -8,12 +8,11 @@ function Projects() {
 
   useEffect(function () {
     axios
-      .get(`http://127.0.0.1:8000/api/projects/all`)
+      .get(`http://127.0.0.1:8000/api/projects/`)
       .then(function (response) {
         setprojects(response.data.projects);
       })
       .catch(function (error) {
-        alert(error.response.data.message);
         console.log(error);
       });
   }, []);
