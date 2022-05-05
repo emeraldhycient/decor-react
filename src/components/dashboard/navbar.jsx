@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import ScrollIntoView from "react-scroll-into-view";
 import { useNavigate, Link } from "react-router-dom";
-import { logo } from "../../images/logo.png";
+import logo from "../../images/logo.png";
 
 function Navbar() {
   let navigate = useNavigate();

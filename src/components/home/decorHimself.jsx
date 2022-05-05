@@ -1,4 +1,4 @@
-import { decorimage } from "../../images/decor-himself.jpeg";
+import decorimage from "../../images/decor-himself.jpeg";
 
 function DecorHimself() {
   return (

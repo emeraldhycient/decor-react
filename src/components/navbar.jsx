@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { logo } from "../images/logo.png";
+import logo from "../images/logo.png";
 function Navbar() {
   return (
     <nav className="bg-[#396051] h-[4rem] w-screen sticky top-0 backdrop-blur	z-20">

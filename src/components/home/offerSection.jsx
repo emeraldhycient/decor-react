@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import StartportBtn from "./startportBtn";
 import CarouselTing from "../carouselTing";
-import { sun } from "../../images/sun.png";
+import sun from "../../images/sun.png";
 
 function OfferSection() {
   const [images, setimages] = useState([
