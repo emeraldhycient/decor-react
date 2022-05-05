@@ -1,3 +1,5 @@
+import { decorimage } from "../../images/decor-himself.jpeg";
+
 function DecorHimself() {
   return (
     <section
@@ -12,7 +14,7 @@ function DecorHimself() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="h-92 md:h-[94vh] order-last md:order-first">
             <img
-              src="/images/decor-himself.jpeg"
+              src={decorimage}
               width={630}
               height={665}
               alt="decor-himself"

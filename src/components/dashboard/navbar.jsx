@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ScrollIntoView from "react-scroll-into-view";
 import { useNavigate, Link } from "react-router-dom";
+import { logo } from "../../images/logo.png";
 
 function Navbar() {
   let navigate = useNavigate();
@@ -25,7 +26,7 @@ function Navbar() {
           <Link to="/">
             <div className="text-white font-bold text-xl flex">
               <img
-                src="/images/logo512.png"
+                src={logo}
                 alt="Mpdesigns logo"
                 width={40}
                 height={40}

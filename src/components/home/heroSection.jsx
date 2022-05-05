@@ -1,4 +1,8 @@
 import StartportBtn from "./startportBtn";
+import bg from "../../images/decor2.svg";
+import apart1 from "../../images/apart1.png";
+import apart2 from "../../images/apart2.png";
+import apart3 from "../../images/apart3.png";
 
 function HeroSection() {
   return (
@@ -6,7 +10,7 @@ function HeroSection() {
       id="hero"
       className="h-fit md:h-[92vh]"
       style={{
-        backgroundImage: `url(/images/decor2.svg)`,
+        backgroundImage: `url(${bg})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -48,26 +52,26 @@ function HeroSection() {
           </div>
           <div className="">
             <img
-              src="/images/apart1.png"
+              src={apart1}
               alt="Mpdesigns images 1"
               width={600}
               height={400}
               className="h-full rounded"
             />
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 mt-1 mb-4">
               <img
-                src="/images/apart2.png"
+                src={apart2}
                 alt="Mpdesigns images 1"
                 width={100}
                 height={100}
-                className="h-full rounded"
+                className="h-20 w-full rounded"
               />
               <img
-                src="/images/apart1.png"
+                src={apart3}
                 alt="Mpdesigns images 1"
                 width={100}
                 height={100}
-                className="h-full rounded"
+                className="h-20 w-full rounded"
               />
             </div>
           </div>

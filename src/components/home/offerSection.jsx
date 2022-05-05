@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import StartportBtn from "./startportBtn";
 import CarouselTing from "../carouselTing";
+import { sun } from "../../images/sun.png";
 
 function OfferSection() {
   const [images, setimages] = useState([
-    { id: 23, src: "/images/apart3.png" },
-    { id: 56, src: "/images/apart4.png" },
-    { id: 34, src: "/images/apart1.png" },
-    { id: 45, src: "/images/apart2.png" },
+    { id: 23, src: "../../images/apart3.png" },
+    { id: 56, src: "../../images/apart4.png" },
+    { id: 34, src: "../../images/apart1.png" },
+    { id: 45, src: "../../images/apart2.png" },
   ]);
 
   return (
@@ -15,7 +16,7 @@ function OfferSection() {
       id="offerSection"
       className="h-fit md:h-[92vh] pb-4"
       style={{
-        backgroundImage: `url(/images/sun.png)`,
+        backgroundImage: `url(${sun})`,
         backgroundSize: "contain",
         backgroundPosition: "top right",
         backgroundRepeat: "no-repeat",
