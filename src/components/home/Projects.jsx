@@ -8,7 +8,7 @@ function Projects() {
 
   useEffect(function () {
     axios
-      .get(`http://127.0.0.1:8000/api/projects/`)
+      .get(`https://api.mpdesign.org/api/projects/`)
       .then(function (response) {
         setprojects(response.data.projects);
       })

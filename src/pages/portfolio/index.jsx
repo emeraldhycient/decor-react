@@ -14,7 +14,7 @@ function Index() {
   useEffect(
     function () {
       axios
-        .get(`http://127.0.0.1:8000/api/projects/${status}`)
+        .get(`https://api.mpdesign.org/api/projects/${status}`)
         .then(function (response) {
           setprojects(response.data.projects);
         })
@@ -58,7 +58,7 @@ function Index() {
 
 /*export async function getServerSideProps() {
   // Fetch data from external API
-  const data = await axios.get(`http://127.0.0.1:8000/api/projects/all`);
+  const data = await axios.get(`https://api.mpdesign.org/api/projects/all`);
   const projects = data.data.projects;
 
   // Pass data to the page via props

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import Layout from "../../../components/layout";
 import Navbar from "../../../components/dashboard/navbar";
@@ -7,10 +7,11 @@ import WithAuth from "../../../Hoc/withAuth";
 
 function CreateOrUpdate() {
   const { slug } = useParams();
+  const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState("");
   const [project_status, setproject_status] = useState("");
   const [project_date, setproject_date] = useState("");
 
@@ -21,7 +22,7 @@ function CreateOrUpdate() {
     if (image) {
       return (
         <img
-          src={image}
+          src={URL.createObjectURL(image)}
           height={100}
           width={100}
           className="w-full h-20 hover:scale-150"
@@ -34,11 +35,15 @@ function CreateOrUpdate() {
   const handleMultipleImages = (evnt) => {
     const selectedFIles = [];
     const targetFiles = evnt.target.files;
-    const targetFilesObject = [...targetFiles];
+
+    for (let i = 0; i < targetFiles.length; i++) {
+      selectedFIles.push(targetFiles[i]);
+    }
+    /*const targetFilesObject = [...targetFiles];
     targetFilesObject.map((file) => {
-      console.log(URL.createObjectURL(file));
-      return selectedFIles.push(URL.createObjectURL(file));
-    });
+      //console.log(URL.createObjectURL(file));
+      selectedFIles.push(URL.createObjectURL(file));
+    });*/
     setImages(selectedFIles);
   };
 
@@ -46,7 +51,7 @@ function CreateOrUpdate() {
     if (slug) {
       setIsLoading(true);
       axios
-        .get(`http://127.0.0.1:8000/api/project/${slug}`, {
+        .get(`https://api.mpdesign.org/api/project/${slug}`, {
           headers: {
             Authorization: `Bearer ${sessionStorage.getItem("token")}`,
           },
@@ -58,7 +63,6 @@ function CreateOrUpdate() {
 
           setproject_status(project.Project_status);
           setproject_date(project.Project_date);
-          console.log(project);
         })
         .catch((error) => {
           console.log(error);
@@ -80,15 +84,17 @@ function CreateOrUpdate() {
     formData.append("project_date", project_date);
     formData.append("images", images);
 
+    console.table(images);
+
     axios
-      .post(`http://127.0.0.1:8000/api/projects/create`, formData, {
+      .post(`https://api.mpdesign.org/api/projects/create`, formData, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`,
         },
       })
       .then((response) => {
         console.log(response);
-        router.push("/dashboard/projects");
+        navigate("/dashboard/upload");
       })
       .catch((error) => {
         console.log(error.response.data.message);
@@ -182,7 +188,6 @@ function CreateOrUpdate() {
                 onChange={(e) => setproject_status(e.target.value)}
                 className=" appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:-outline"
               >
-                <option value="all">All</option>
                 <option value="ongoing">Ongoing</option>
                 <option value="finished">Finished</option>
                 <option value="pending">pending</option>

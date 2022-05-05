@@ -15,7 +15,7 @@ function Project() {
   useEffect(
     function () {
       axios
-        .get(`http://127.0.0.1:8000/api/project/${slug}`)
+        .get(`https://api.mpdesign.org/api/project/${slug}`)
         .then(function (response) {
           console.log(response.data.project);
           const Images = Object.values(response.data.project.images);
@@ -58,7 +58,7 @@ function Project() {
 /*export async function getServerSideProps({ params }) {
   // Fetch data from external API
   const { slug } = params;
-  const data = await axios.get(`http://127.0.0.1:8000/api/project/${slug}`);
+  const data = await axios.get(`https://api.mpdesign.org/api/project/${slug}`);
   const project = data.data.project;
 
   // Pass data to the page via props

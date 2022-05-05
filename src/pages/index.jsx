@@ -39,7 +39,7 @@ export default function Home() {
 
 /*export async function getServerSideProps() {
   // Fetch data from external API
-  const data = await axios.get(`http://127.0.0.1:8000/api/projects/all`);
+  const data = await axios.get(`https://api.mpdesign.org/api/projects/all`);
   let projects = data.data.projects;
   projects = projects.slice(0, 8);
 
