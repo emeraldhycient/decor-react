@@ -1,3 +1,4 @@
+import decor2 from "../../images/decor-2.jpeg";
 function Schedule() {
   return (
     <section id="schedule" className="h-fit  pb-4">
@@ -40,7 +41,7 @@ function Schedule() {
           <div
             className="bg-gray-200 w-56 h-56 rounded-full mt-8"
             style={{
-              backgroundImage: "url(images/decor-2.jpeg)",
+              backgroundImage: `url(${decor2})`,
               backgroundSize: "contain",
             }}
           ></div>
