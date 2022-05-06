@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
 
-function Project({ slug, image }) {
-  const Btn = ({ link }) => (
-    <button className="bg-amber-500 text-white mt-6 px-3 py-2 rounded-sm  hover:bg-white hover:text-amber-500 hover:border-[.01rem] hover:border-amber-500 scale-90 hover:scale-75">
-      <Link to={link}> View Project</Link>
-    </button>
-  );
+function Project({ project }) {
+  const { slug, image } = project;
 
   return (
     <div
@@ -19,7 +15,9 @@ function Project({ slug, image }) {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <Btn link={`/portfolio/${slug}`} />
+      <button className="bg-amber-500 text-white mt-6 px-3 py-2 rounded-sm  hover:bg-white hover:text-amber-500 hover:border-[.01rem] hover:border-amber-500 scale-90 hover:scale-75">
+        <Link to={`/portfolio/${slug}`}> View Project</Link>
+      </button>
     </div>
   );
 }

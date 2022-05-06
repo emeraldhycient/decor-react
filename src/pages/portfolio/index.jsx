@@ -49,7 +49,9 @@ function Index() {
             <Project project={project} key={index} />
           ))
         ) : (
-          <h2>Nothing found at the moment</h2>
+          <h2 className="text-slate-800 my-8 mx-8">
+            Nothing found at the moment
+          </h2>
         )}
       </div>
     </Layout>

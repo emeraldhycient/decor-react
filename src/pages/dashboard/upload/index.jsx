@@ -84,7 +84,7 @@ function CreateOrUpdate() {
     formData.append("project_date", project_date);
     formData.append("images", images);
 
-    console.table(images);
+    //console.table(images);
 
     axios
       .post(`https://api.mpdesign.org/api/projects/create`, formData, {

@@ -71,7 +71,9 @@ function Dashboard() {
             ))
           ) : (
             <div className="mt-10">
-              <h1>nothing found at the moment</h1>
+              <h2 className="text-slate-800 my-8 mx-8 text-lg font-bold">
+                nothing found at the moment
+              </h2>
             </div>
           )}
         </div>
