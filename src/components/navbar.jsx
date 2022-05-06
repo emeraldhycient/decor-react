@@ -20,19 +20,19 @@ function Navbar() {
             </div>
           </Link>
         </div>
-        <ul className="hidden md:flex  md:w-3/12 text-white  justify-between items-center">
-          <li>
+        <ul className=" flex  md:w-3/12 text-white  justify-between items-center">
+          <li className="hidden md:block">
             <Link to="/">
               <span className="text-white  text-base">Home</span>
             </Link>
           </li>
 
-          <li>
+          <li className="hidden md:block">
             <Link to="/contact">
               <span className="text-white  text-base">Contact</span>
             </Link>
           </li>
-          <li>
+          <li className="hidden md:block">
             <Link to="/portfolio">
               <span className="text-white  text-base">Portfolio</span>
             </Link>
