@@ -11,7 +11,7 @@ import DecorHimself from "../components/home/decorHimself";
 import Schedule from "../components/home/schedule";
 
 export default function Home() {
-  const [projects, setprojects] = useState([]);
+  /* const [projects, setprojects] = useState([]);
 
   useEffect(function () {
     axios
@@ -22,7 +22,7 @@ export default function Home() {
       .catch(function (error) {
         console.log(error);
       });
-  }, []);
+  }, []); */
 
   return (
     <Layout
@@ -38,7 +38,7 @@ export default function Home() {
         <WhatwesellSection />
       </div>
       <div className="mt-10">
-        <Projects projects={projects.length > 0 ? projects : []} />
+        <Projects />
       </div>
       <div className="mt-20">
         <DecorHimself />

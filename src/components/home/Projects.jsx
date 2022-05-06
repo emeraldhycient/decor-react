@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Project from "../project";
 
-function Projects({ projects }) {
+function Projects() {
   const [status, setstatus] = useState("all");
 
-  /*const [projects, setprojects] = useState([]);
+  const [projects, setprojects] = useState([]);
 
   useEffect(
     function () {
@@ -21,7 +21,7 @@ function Projects({ projects }) {
     },
     [status]
   );
-*/
+
   return (
     <section id="Portfolio" className="h-fit">
       <div className="w-[98vw] mx-auto md:w-10/12">
@@ -41,7 +41,7 @@ function Projects({ projects }) {
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 pt-12">
-          {projects?.length > 0 ? (
+          {/*projects?.length > 0 ? (
             projects.map((project, index) => (
               <div
                 className="h-56 md:h-80 bg-gray-300"
@@ -66,7 +66,10 @@ function Projects({ projects }) {
             <h2 className="text-slate-800 my-8 mx-8 text-lg font-bold">
               Nothing found at the moment
             </h2>
-          )}
+          )*/}
+          <h2 className="text-slate-800 my-8 mx-8 text-lg font-bold">
+            Nothing found at the moment
+          </h2>
         </div>
       </div>
     </section>
