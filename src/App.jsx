@@ -15,7 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/portfolio" element={<Index />} />
         <Route path="/portfolio/:slug" element={<Project />} />
-        <Route path="/dashboard/" element={<Dashboard />} />
+        <Route path="/dashboard/" exact element={<Dashboard />} />
         <Route path="/dashboard/upload" element={<CreateOrUpdate />} />
         <Route path="/dashboard/update/:slug" element={<Update />} />
       </Routes>

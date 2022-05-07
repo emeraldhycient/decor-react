@@ -8,17 +8,14 @@ import Footer from "../../components/footer";
 function Project() {
   const { slug } = useParams();
 
-  const [project, setproject] = useState([]);
-  const [images, setimages] = useState([]);
+  const [project, setproject] = useState();
 
   useEffect(
     function () {
       axios
         .get(`https://api.mpdesign.org/api/project/${slug}`)
         .then(function (response) {
-          //console.log(response.data.project);
-          const Images = Object.values(response.data.project.images);
-          setimages(Images);
+          console.log(response.data.project);
           setproject(response.data.project);
         })
         .catch(function (error) {
@@ -32,7 +29,7 @@ function Project() {
     <Layout>
       <Navbar />
       <div className="w-11/12 md:w-10/12 mx-auto mt-4 md:mt-6">
-        {project?.length > 0 ? (
+        {project ? (
           <>
             <div className="h-[400px] bg-gray-400">
               {/*put carousell here with images from project  */}

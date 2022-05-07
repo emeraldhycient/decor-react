@@ -114,7 +114,7 @@ function Update() {
         <Navbar />
         <div className="w-11/12 md:w-5/12 mx-auto border-[.01rem] border-gray-200 p-2 mt-4 mb-4">
           <h1 className="text-lg text-center font-bold text-blue-300 mt-2 mb-4">
-            Create or Update Project
+            Update Project
           </h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">

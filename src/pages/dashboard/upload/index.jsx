@@ -47,32 +47,6 @@ function CreateOrUpdate() {
     setImages(selectedFIles);
   };
 
-  useEffect(() => {
-    if (slug) {
-      setIsLoading(true);
-      axios
-        .get(`https://api.mpdesign.org/api/project/${slug}`, {
-          headers: {
-            Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-          },
-        })
-        .then((response) => {
-          const { project } = response.data;
-          setTitle(project.slug);
-          setDescription(project.description);
-
-          setproject_status(project.Project_status);
-          setproject_date(project.Project_date);
-        })
-        .catch((error) => {
-          console.log(error);
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
-    }
-  }, [slug]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
