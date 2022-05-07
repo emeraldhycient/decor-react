@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import apart4 from "../../images/apart4.png";
 
 function Project({ project }) {
   const Btn = ({ link }) => (
@@ -12,7 +13,7 @@ function Project({ project }) {
       <div
         className="h-56 md:h-80 bg-gray-300"
         style={{
-          backgroundImage: `url(images/apart2.png)`,
+          backgroundImage: `url(${apart4})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

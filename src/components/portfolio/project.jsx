@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import apart2 from "../../images/apart2.png";
 
 function Project({ project }) {
   const Btn = ({ link }) => (
@@ -12,14 +13,13 @@ function Project({ project }) {
       <div
         className="h-56 md:h-80 bg-gray-300"
         style={{
-          backgroundImage: `url(images/apart2.png)`,
+          backgroundImage: `url(${apart2})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
         }}
       >
         {/*update bg image by the first index */}
-
         <Btn link={`/portfolio/${project.slug}`} />
       </div>
       <h1 className="text-lg font-bold my-4 mx-1 w-full">{project.slug}</h1>

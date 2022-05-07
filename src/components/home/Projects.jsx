@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import apart1 from "../../images/apart1.png";
 
 function Projects() {
   const [projects, setprojects] = useState([]);
@@ -43,7 +44,7 @@ function Projects() {
                 key={index}
                 className="h-56 md:h-80 bg-gray-300"
                 style={{
-                  backgroundImage: `url(/images/apart1.png)`,
+                  backgroundImage: `url(${apart1})`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
