@@ -1,26 +1,22 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import Project from "../project";
 
 function Projects() {
-  const [status, setstatus] = useState("all");
-
   const [projects, setprojects] = useState([]);
 
-  useEffect(
-    function () {
-      axios
-        .get(`https://api.mpdesign.org/api/projects/all`)
-        .then(function (response) {
-          setprojects(response.data.projects);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    },
-    [status]
-  );
+  useEffect(function () {
+    axios
+      .get(`https://api.mpdesign.org/api/projects/all`)
+      .then(function (response) {
+        //console.log(response.data.projects);
+        const data = response.data.projects.slice(0, 8);
+        setprojects(data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <section id="Portfolio" className="h-fit">
@@ -41,16 +37,13 @@ function Projects() {
           </Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 pt-12">
-          {/*projects?.length > 0 ? (
+          {projects.length > 0 ? (
             projects.map((project, index) => (
               <div
+                key={index}
                 className="h-56 md:h-80 bg-gray-300"
                 style={{
-                  backgroundImage: `url(${
-                    project.image[0].length > 0
-                      ? project.image[0]
-                      : `/images/apart1.png`
-                  })`,
+                  backgroundImage: `url(/images/apart1.png)`,
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
@@ -60,16 +53,12 @@ function Projects() {
                   <Link to={`/portfolio/${project.slug}`}> View Project</Link>
                 </button>
               </div>
-              //<Project project={project} key={index} />
             ))
           ) : (
             <h2 className="text-slate-800 my-8 mx-8 text-lg font-bold">
               Nothing found at the moment
             </h2>
-          )*/}
-          <h2 className="text-slate-800 my-8 mx-8 text-lg font-bold">
-            Nothing found at the moment
-          </h2>
+          )}
         </div>
       </div>
     </section>
