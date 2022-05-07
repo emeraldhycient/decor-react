@@ -1,12 +1,11 @@
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Layout from "../../../components/layout";
 import Navbar from "../../../components/dashboard/navbar";
 import WithAuth from "../../../Hoc/withAuth";
 
 function CreateOrUpdate() {
-  const { slug } = useParams();
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -67,7 +66,7 @@ function CreateOrUpdate() {
         },
       })
       .then((response) => {
-        //console.log(response);
+        // console.log(response);
         alert(response.data.status);
         navigate("/dashboard");
       })
@@ -83,13 +82,13 @@ function CreateOrUpdate() {
   return (
     <WithAuth>
       <Layout
-        title="create or update - home of decoration and home designs"
+        title="create  - home of decoration and home designs"
         description="Mpdesigns - home of decoration and home designs"
       >
         <Navbar />
         <div className="w-11/12 md:w-5/12 mx-auto border-[.01rem] border-gray-200 p-2 mt-4 mb-4">
           <h1 className="text-lg text-center font-bold text-blue-300 mt-2 mb-4">
-            Create or Update Project
+            Create Project
           </h1>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
