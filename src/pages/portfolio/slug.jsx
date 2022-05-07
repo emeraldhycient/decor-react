@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Layout from "../../components/layout";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
+import apart3 from "../../images/apart3.png";
 
 function Project() {
   const { slug } = useParams();
@@ -26,12 +27,20 @@ function Project() {
   );
 
   return (
-    <Layout>
+    <Layout title={project ? project.slug : "individual project view"}>
       <Navbar />
       <div className="w-11/12 md:w-10/12 mx-auto mt-4 md:mt-6">
         {project ? (
           <>
-            <div className="h-[400px] bg-gray-400">
+            <div
+              className="h-[400px] bg-gray-400"
+              style={{
+                backgroundImage: `url(${apart3})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
               {/*put carousell here with images from project  */}
             </div>
             <div className="block md:flex md:justify-between items-center w-full">
