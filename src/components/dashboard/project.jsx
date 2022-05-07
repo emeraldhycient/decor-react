@@ -23,7 +23,7 @@ function Project({ project }) {
           <Btn link={`/portfolio/${project.slug}`} />
 
           <button className="bg-blue-300 px-2 rounded-sm  hover:bg-white hover:text-amber-500 ">
-            <Link to={`/dashboard/upload/${project.slug}`}>
+            <Link to={`/dashboard/update/${project.slug}`}>
               <div className="flex">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

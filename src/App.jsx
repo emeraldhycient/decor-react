@@ -5,6 +5,7 @@ import Project from "./pages/portfolio/slug";
 import Login from "./pages/login";
 import Dashboard from "./pages/dashboard";
 import CreateOrUpdate from "./pages/dashboard/upload/index";
+import Update from "./pages/dashboard/upload/update";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Route path="/portfolio/:slug" element={<Project />} />
         <Route path="/dashboard/" element={<Dashboard />} />
         <Route path="/dashboard/upload" element={<CreateOrUpdate />} />
-        <Route path="/dashboard/upload/:slug" element={<CreateOrUpdate />} />
+        <Route path="/dashboard/update/:slug" element={<Update />} />
       </Routes>
     </BrowserRouter>
   );
