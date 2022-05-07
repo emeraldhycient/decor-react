@@ -94,7 +94,8 @@ function Update() {
       })
       .then((response) => {
         console.log(response);
-        navigate("/dashboard/upload");
+        alert(response.data.status);
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.log(error.response.data.message);
@@ -117,22 +118,6 @@ function Update() {
             Update Project
           </h1>
           <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="title"
-              >
-                Title
-              </label>
-              <input
-                className=" appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:-outline"
-                id="title"
-                type="text"
-                placeholder="Title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-              />
-            </div>
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -214,7 +199,7 @@ function Update() {
                 className="bg-amber-500 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-sm focus:outline-none focus:-outline"
                 type="submit"
               >
-                {isLoading ? "Loading..." : "Create"}
+                {isLoading ? "Loading..." : "Update"}
               </button>
             </div>
             {error && <p className="text-red-500 text-sm mt-2">{error}</p>}

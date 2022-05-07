@@ -68,7 +68,8 @@ function CreateOrUpdate() {
       })
       .then((response) => {
         console.log(response);
-        navigate("/dashboard/upload");
+        alert(response.data.status);
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.log(error.response.data.message);
