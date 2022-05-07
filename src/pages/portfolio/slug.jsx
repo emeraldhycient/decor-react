@@ -16,7 +16,7 @@ function Project() {
       axios
         .get(`https://api.mpdesign.org/api/project/${slug}`)
         .then(function (response) {
-          console.log(response.data.project);
+          //console.log(response.data.project);
           setproject(response.data.project);
         })
         .catch(function (error) {

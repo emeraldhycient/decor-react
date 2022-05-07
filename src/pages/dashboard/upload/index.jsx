@@ -67,7 +67,7 @@ function CreateOrUpdate() {
         },
       })
       .then((response) => {
-        console.log(response);
+        //console.log(response);
         alert(response.data.status);
         navigate("/dashboard");
       })

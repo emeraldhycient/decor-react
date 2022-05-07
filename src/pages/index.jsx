@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import Layout from "../components/layout";
@@ -11,19 +9,6 @@ import DecorHimself from "../components/home/decorHimself";
 import Schedule from "../components/home/schedule";
 
 export default function Home() {
-  /* const [projects, setprojects] = useState([]);
-
-  useEffect(function () {
-    axios
-      .get(`https://api.mpdesign.org/api/projects`)
-      .then(function (response) {
-        setprojects(response.data.projects);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }, []); */
-
   return (
     <Layout
       title="Mpdesigns - home of decoration and home designs"
