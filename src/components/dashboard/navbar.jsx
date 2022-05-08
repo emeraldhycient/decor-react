@@ -8,6 +8,9 @@ function Navbar() {
 
   const [user, setuser] = useState(null);
   const logout = () => {
+    if (!confirm("Are you sure you want to logout?")) {
+      return;
+    }
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("user");
     navigate("/login");

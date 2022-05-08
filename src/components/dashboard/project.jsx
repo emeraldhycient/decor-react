@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import apart4 from "../../images/apart4.png";
+import axios from "axios";
 
 function Project({ project }) {
   const Btn = ({ link }) => (
@@ -7,6 +8,28 @@ function Project({ project }) {
       <Link to={link}> View Project</Link>
     </button>
   );
+
+  const deletebtn = (slug) => {
+    if (!confirm("are you sure , you want to delete this")) {
+      return false;
+    }
+
+    axios
+      .get(`https://api.mpdesign.org/api/projects/delete/${slug}`, {
+        headers: {
+          Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+        },
+      })
+      .then(function (response) {
+        //console.log(response.data);
+        alert(response.data.message);
+        window.location.reload();
+      })
+      .catch(function (error) {
+        //console.log(error.response.data);
+        alert(error.response.data.message);
+      });
+  };
 
   return (
     <section className="flex flex-col w-full">
@@ -46,6 +69,12 @@ function Project({ project }) {
         </div>
       </div>
       <h1 className="text-lg font-bold my-4 mx-1 w-full">{project.slug}</h1>
+      <button
+        onClick={(e) => deletebtn(project.slug)}
+        className="bg-slate-900 text-white px-3 py-1 rounded-sm  hover:bg-white hover:text-slate-900 hover:border-[.01rem] hover:border-slate-900 scale-90 hover:scale-75"
+      >
+        Delete
+      </button>
     </section>
   );
 }
