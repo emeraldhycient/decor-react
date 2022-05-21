@@ -55,7 +55,7 @@ function CreateOrUpdate() {
     formData.append("description", description);
     formData.append("project_status", project_status);
     formData.append("project_date", project_date);
-    formData.append("images", images);
+    images.map((image) => formData.append("images[]", image));
 
     //console.table(images);
 
@@ -66,7 +66,7 @@ function CreateOrUpdate() {
         },
       })
       .then((response) => {
-        // console.log(response);
+        //console.log(response);
         alert(response.data.status);
         navigate("/dashboard");
       })
