@@ -15,6 +15,7 @@ function Dashboard() {
       axios
         .get(`https://api.mpdesign.org/api/projects/${status}`)
         .then(function (response) {
+          //console.log(response.data.projects);
           setprojects(response.data.projects);
         })
         .catch(function (error) {

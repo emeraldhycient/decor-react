@@ -5,6 +5,7 @@ import Layout from "../../components/layout";
 import Navbar from "../../components/navbar";
 import Footer from "../../components/footer";
 import apart3 from "../../images/apart3.png";
+import CarouselTing from "../../components/portfolio/carouselTing";
 
 function Project() {
   const { slug } = useParams();
@@ -41,6 +42,7 @@ function Project() {
                 backgroundRepeat: "no-repeat",
               }}
             >
+              <CarouselTing images={project.images} />
               {/*put carousell here with images from project  */}
             </div>
             <div className="block md:flex md:justify-between items-center w-full">

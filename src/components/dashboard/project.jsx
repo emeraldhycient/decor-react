@@ -31,12 +31,14 @@ function Project({ project }) {
       });
   };
 
+  console.log(project.images[0].path);
+
   return (
     <section className="flex flex-col w-full">
       <div
         className="h-56 md:h-80 bg-gray-300"
         style={{
-          backgroundImage: `url(${apart4})`,
+          backgroundImage: `url(https://api.mpdesign.org/storage/${project.images[0].path})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

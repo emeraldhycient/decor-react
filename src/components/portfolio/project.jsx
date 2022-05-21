@@ -13,7 +13,7 @@ function Project({ project }) {
       <div
         className="h-56 md:h-80 bg-gray-300"
         style={{
-          backgroundImage: `url(${apart2})`,
+          backgroundImage: `url(https://api.mpdesign.org/storage/${project.images[0].path})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
