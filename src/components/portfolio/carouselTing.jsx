@@ -18,7 +18,7 @@ function CarouselTing({ images }) {
         {images.map((image, id) => (
           <Slide key={id}>
             <img
-              src={`https://api.mpdesign.org/storage/${image.path}`}
+              src={`https://api.mpdesign.org/images/${image.path}`}
               className=" h-full w-full"
               alt="Mpdesigns images"
             />

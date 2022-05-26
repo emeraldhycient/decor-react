@@ -162,6 +162,7 @@ function CreateOrUpdate() {
                 onChange={(e) => setproject_status(e.target.value)}
                 className=" appearance-none border rounded-sm w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:-outline"
               >
+                <option value="">select</option>
                 <option value="ongoing">Ongoing</option>
                 <option value="finished">Finished</option>
                 <option value="pending">pending</option>
